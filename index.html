@@ -9,34 +9,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!-- Social media icons (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 :root{
-  --bg:#eceef3; --card:#ffffff; --ink:#14161c; --muted:#6b7080;
-  --hover:#f6f7fb; --ring-a:#6d5efc; --ring-b:#22c1c3; --shadow:0 1px 2px rgba(20,22,28,.05),0 8px 24px rgba(20,22,28,.06);
+  --bg:#eceef3; --card:#ffffff; --ink:#14161c; --muted:#6b7080; --hover:#f6f7fb;
+  --ring-a:#6d5efc; --ring-b:#22c1c3;
+  --shadow:0 1px 2px rgba(20,22,28,.05),0 8px 24px rgba(20,22,28,.06);
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#0f1117; --card:#1a1d27; --ink:#f2f3f7; --muted:#9097aa; --hover:#222636; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}
+  :root{--bg:#0f1117; --card:#1a1d27; --ink:#f2f3f7; --muted:#9097aa; --hover:#222636;
+        --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{background:var(--bg)}
 body{
   font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-  color:var(--ink); min-height:100vh; min-height:100dvh; position:relative; overflow-x:hidden;
+  color:var(--ink); min-height:100vh; overflow-x:hidden;
   background:
     radial-gradient(520px 320px at 85% -5%,rgba(109,94,252,.18),transparent 70%),
     radial-gradient(480px 300px at 5% 30%,rgba(34,193,195,.14),transparent 70%),
     var(--bg);
 }
 .container{max-width:520px;margin:0 auto;padding:22px 20px 40px}
+
 .top{display:flex;justify-content:flex-end}
-.icon-btn{
+.share{
   width:44px;height:44px;border:none;border-radius:50%;background:var(--card);color:var(--ink);
-  display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);transition:transform .2s
+  font-size:18px;cursor:pointer;box-shadow:var(--shadow);transition:transform .2s
 }
-.icon-btn:hover{transform:scale(1.07)}
-svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-svg.f{fill:currentColor;stroke:none}
-.icon-btn svg{font-size:20px}
+.share:hover{transform:scale(1.07)}
 
 .profile{text-align:center;padding-top:22px}
 .avatar-wrap{
@@ -46,24 +48,28 @@ svg.f{fill:currentColor;stroke:none}
 }
 .avatar{
   width:100%;height:100%;border-radius:50%;background:#a9aaa4;border:4px solid var(--bg);
-  display:grid;place-items:center;color:#fff;font-size:34px;font-weight:800;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:34px;font-weight:800;overflow:hidden;
   animation:spin 9s linear infinite reverse;
 }
 .avatar img{width:100%;height:100%;object-fit:cover}
 @keyframes spin{to{transform:rotate(360deg)}}
 .name{font-size:27px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
-.username{font-size:16px;font-weight:600;color:var(--muted);margin-bottom:6px}
-.tagline{font-size:14px;color:var(--muted);margin-bottom:24px}
+.username{font-size:16px;font-weight:600;color:var(--muted);margin-bottom:24px}
 
 .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:34px}
 .socials a{
   width:48px;height:48px;border-radius:50%;background:var(--card);color:var(--ink);
-  display:grid;place-items:center;box-shadow:var(--shadow);transition:transform .2s,color .2s
+  display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;
+  box-shadow:var(--shadow);transition:transform .2s,color .2s
 }
-.socials a svg{font-size:23px}
 .socials a:hover{transform:translateY(-4px)}
-.socials a.ig:hover{color:#e1306c}.socials a.fb:hover{color:#1877f2}
-.socials a.wa:hover{color:#25d366}.socials a.sc:hover{color:#f5c400}
+.socials .ig:hover{color:#e1306c}.socials .fb:hover{color:#1877f2}
+.socials .wa:hover{color:#25d366}.socials .sc:hover{color:#f5c400}
+
+.pdf{
+  background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:12px
+}
+.pdf iframe{display:block;width:100%;height:300px;border:0;background:#fff}
 
 .links{display:flex;flex-direction:column;gap:12px}
 .link{
@@ -73,92 +79,74 @@ svg.f{fill:currentColor;stroke:none}
 }
 .link:hover{background:var(--hover);transform:translateY(-2px)}
 .chip{
-  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;
-  font-size:19px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)
+  width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none;
+  font-size:18px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)
 }
-.link span.t{flex:1}
-.link .go{font-size:16px;color:var(--muted)}
+.link .t{flex:1}
+.link .go{font-size:13px;color:var(--muted)}
 
 a:focus-visible,button:focus-visible{outline:3px solid var(--ring-a);outline-offset:3px}
 .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;line-height:1.8}
 
-@media (max-width:400px){.container{padding:18px 16px 32px}.name{font-size:24px}.socials{gap:11px}}
+@media (max-width:400px){.container{padding:18px 16px 32px}.name{font-size:24px}.socials{gap:11px}.pdf iframe{height:260px}}
 @media (prefers-reduced-motion:reduce){.avatar-wrap,.avatar{animation:none}*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- Icon sprite -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-share" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></symbol>
-  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
-  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1.3-1.3-2-1-.9.7c-1-.4-2-1.4-2.4-2.4l.7-.9-1-2L9 9.5z"/></symbol>
-  <symbol id="i-sc" viewBox="0 0 24 24"><path d="M12 3c-3 0-4.5 2.2-4.5 4.8v2.2c-.8.3-1.8.3-2.5.2.2.9 1 1.3 1.9 1.6-.3.8-1.2 1.6-2.4 2 .6.8 1.8.8 2.6 1 .2.5.1 1 .8 1 .8 0 1.5-.4 2.5.2.9.6 1.7 1.5 3.1 1.5s2.2-.9 3.1-1.5c1-.6 1.7-.2 2.5-.2.7 0 .6-.5.8-1 .8-.2 2-.2 2.6-1-1.2-.4-2.1-1.2-2.4-2 .9-.3 1.7-.7 1.9-1.6-.7.1-1.7.1-2.5-.2V7.8C16.5 5.2 15 3 12 3z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
-  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
-  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-  <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-  <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
-  <symbol id="i-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
-</svg>
-
 <div class="container">
 
   <div class="top">
-    <button class="icon-btn" onclick="sharePage()" aria-label="Share page"><svg><use href="#i-share"/></svg></button>
+    <button class="share" onclick="sharePage()" aria-label="Share page"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
   </div>
 
   <header class="profile">
     <div class="avatar-wrap">
       <div class="avatar">
         SK
-        <!-- Photo lagani ho to upar "SK" hata kar ye line use karo:
+        <!-- Photo lagani ho to "SK" hata kar ye line use karo:
         <img src="YOUR-PHOTO-URL" alt="Shehryar Khan"> -->
       </div>
     </div>
 
     <h1 class="name">Shehryar Khan</h1>
     <p class="username">@Shehrology</p>
-    <p class="tagline">Official digital profile</p>
 
     <nav class="socials" aria-label="Social media">
-      <a class="ig" href="https://www.instagram.com/shehrology/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-      <a class="fb" href="https://www.facebook.com/shehrology/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="f"><use href="#i-fb"/></svg></a>
-      <a href="https://x.com/shehrology/" target="_blank" rel="noopener" aria-label="X"><svg class="f"><use href="#i-x"/></svg></a>
-      <a class="wa" href="https://wa.me/923085000355" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
-      <!-- Apna Snapchat username yahan lagao -->
-      <a class="sc" href="https://www.snapchat.com/add/YOUR_SNAPCHAT" target="_blank" rel="noopener" aria-label="Snapchat"><svg><use href="#i-sc"/></svg></a>
-      <a href="tel:+923085000355" aria-label="Call"><svg><use href="#i-phone"/></svg></a>
+      <a class="ig" href="https://www.instagram.com/shehrology/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="fb" href="https://www.facebook.com/shehrology/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://x.com/shehrology/" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="wa" href="https://wa.me/923085000355" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <!-- Apna Snapchat username YOUR_SNAPCHAT ki jagah likho -->
+      <a class="sc" href="https://www.snapchat.com/add/YOUR_SNAPCHAT" target="_blank" rel="noopener" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+      <a href="tel:+923085000355" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
     </nav>
   </header>
 
-  <main class="links">
-    <a class="link" style="--c:#1fa463" href="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/view?usp=drive_link" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-folder"/></svg></span><span class="t">Google Drive</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#e5484d" href="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/view?usp=drive_link" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-file"/></svg></span><span class="t">Personal Documents (PDF)</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#8b5cf6" href="YOUR_CV_LINK" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-brief"/></svg></span><span class="t">My Resume / CV</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#0a66c2" href="https://www.linkedin.com/in/shehrology/" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-in"/></svg></span><span class="t">Professional Profile</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#6e7681" href="https://github.com/Shehrology" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-code"/></svg></span><span class="t">My Projects</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#f08a24" href="YOUR_HUND_LINK" target="_blank" rel="noopener">
-      <span class="chip"><svg><use href="#i-pin"/></svg></span><span class="t">Hund, Swabi</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
-    <a class="link" style="--c:#0ea5e9" href="mailto:Shehrology@gmail.com">
-      <span class="chip"><svg><use href="#i-mail"/></svg></span><span class="t">Contact Me</span><svg class="go"><use href="#i-go"/></svg>
-    </a>
+  <main>
+    <!-- PDF preview.
+         Apna Google Drive file ka link ye hota hai:
+         https://drive.google.com/file/d/FILE_ID/view
+         Neeche dono jagah FILE_ID badal do (preview mein "/preview" lagta hai).
+         Drive mein file ko "Anyone with the link" share karna zaroori hai. -->
+    <div class="pdf">
+      <iframe src="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/preview"
+              title="PDF preview" loading="lazy" allow="autoplay"></iframe>
+    </div>
+
+    <div class="links">
+      <a class="link" style="--c:#1fa463" href="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="chip"><i class="fa-brands fa-google-drive"></i></span>
+        <span class="t">Google Drive</span>
+        <i class="fa-solid fa-chevron-right go"></i>
+      </a>
+
+      <a class="link" style="--c:#f08a24" href="YOUR_HUND_LINK" target="_blank" rel="noopener">
+        <span class="chip"><i class="fa-solid fa-location-dot"></i></span>
+        <span class="t">Hund, Swabi</span>
+        <i class="fa-solid fa-chevron-right go"></i>
+      </a>
+    </div>
   </main>
 
   <footer class="footer">© 2026 Shehryar Khan<br>All Rights Reserved.</footer>
