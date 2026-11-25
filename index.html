@@ -2,165 +2,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official personal website of Shehryar Khan. Explore my profile, work, projects and social links.">
-  <title>Shehryar Khan | Shehrology</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<title>Shehryar Khan | Shehrology</title>
+<meta name="description" content="Official digital profile of Shehryar Khan">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #f0f6fc;
-      min-height: 100vh;
-      padding: 35px 16px;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .container {
-      max-width: 560px;
-      margin: auto;
-      text-align: center;
-    }
+body {
+  background: #eef0f3;
+  color: #111;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
 
-    .profile {
-      padding: 25px 15px;
-    }
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 25px 22px 35px;
+}
 
-    .avatar {
-      width: 115px;
-      height: 115px;
-      border-radius: 50%;
-      background: #21262d;
-      border: 3px solid #a78bfa;
-      margin: 0 auto 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 42px;
-      font-weight: bold;
-      color: #c4b5fd;
-    }
+/* Share button */
 
-    h1 {
-      font-size: 27px;
-      margin-bottom: 7px;
-    }
+.top {
+  display: flex;
+  justify-content: flex-end;
+}
 
-    .username {
-      color: #a78bfa;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
+.share {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  font-size: 21px;
+  cursor: pointer;
+}
 
-    .bio {
-      color: #b1bac4;
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
+/* Profile */
 
-    .section-title {
-      text-align: left;
-      font-size: 14px;
-      color: #a78bfa;
-      margin: 25px 0 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+.profile {
+  text-align: center;
+  padding-top: 35px;
+}
 
-    .link {
-      display: block;
-      text-decoration: none;
-      color: #f0f6fc;
-      background: #161b22;
-      border: 1px solid #30363d;
-      padding: 16px;
-      border-radius: 12px;
-      margin-bottom: 11px;
-      font-size: 15px;
-      transition: 0.2s;
-    }
+.avatar {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: #a9aaa4;
+  margin: auto auto 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  overflow: hidden;
+}
 
-    .link:hover {
-      background: #21262d;
-      border-color: #a78bfa;
-      transform: translateY(-2px);
-    }
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .footer {
-      margin-top: 35px;
-      padding: 20px;
-      color: #8b949e;
-      font-size: 12px;
-      border-top: 1px solid #30363d;
-    }
+.name {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 
-    @media (max-width: 400px) {
-      h1 { font-size: 23px; }
-      .link { padding: 14px; }
-    }
-  </style>
+.username {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Social icons */
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-bottom: 40px;
+}
+
+.socials a {
+  color: #111;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.socials a:hover {
+  transform: scale(1.15);
+}
+
+/* Links */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  min-height: 52px;
+  background: white;
+  border-radius: 12px;
+  color: #111;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.link:hover {
+  background: #dedfe3;
+  transform: translateY(-2px);
+}
+
+.link-icon {
+  font-size: 19px;
+}
+
+.footer {
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  margin-top: 45px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 400px) {
+  .container {
+    padding: 20px 17px;
+  }
+
+  .name {
+    font-size: 23px;
+  }
+
+  .socials {
+    gap: 19px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <main class="container">
 
-    <header class="profile">
-      <div class="avatar">SK</div>
+<div class="container">
 
-      <h1>Shehryar Khan</h1>
-      <div class="username">@Shehrology</div>
+  <!-- Share -->
+  <div class="top">
+    <button class="share" onclick="sharePage()" aria-label="Share page">
+      ↗
+    </button>
+  </div>
 
-      <p class="bio">
-        Welcome to my personal website.
-        Explore my professional profile, projects,
-        interests and social media.
-      </p>
-    </header>
+  <!-- Profile -->
+  <header class="profile">
 
-    <section>
-      <h2 class="section-title">Professional</h2>
+    <div class="avatar">
+      SK
+      <!-- Add your photo here later:
+      <img src="YOUR-PHOTO-URL" alt="Shehryar Khan">
+      -->
+    </div>
 
-      <a class="link"
-         href="https://www.linkedin.com/in/shehrology/"
-         target="_blank">💼 LinkedIn Profile</a>
+    <h1 class="name">Shehryar Khan</h1>
+    <p class="username">@Shehrology</p>
 
-      <a class="link"
-         href="mailto:">✉️ Contact Me</a>
-    </section>
+    <!-- Social Media -->
 
-    <section>
-      <h2 class="section-title">My Interests & Projects</h2>
+    <div class="socials">
 
-      <a class="link" href="https://www.google.com/search?q=Hund+Swabi"
-         target="_blank">🏡 Hund, Swabi</a>
+      <a href="https://www.instagram.com/shehrology/"
+         target="_blank" aria-label="Instagram">◎</a>
 
-      <a class="link" href="https://github.com/Shehrology"
-         target="_blank">💻 My GitHub</a>
-    </section>
+      <a href="https://www.facebook.com/shehrology/"
+         target="_blank" aria-label="Facebook">f</a>
 
-    <section>
-      <h2 class="section-title">Social Media</h2>
+      <a href="https://x.com/shehrology/"
+         target="_blank" aria-label="X">𝕏</a>
 
-      <a class="link" href="https://www.instagram.com/"
-         target="_blank">📸 Instagram</a>
+      <a href="https://wa.me/+923085000355"
+         target="_blank" aria-label="WhatsApp">◉</a>
 
-      <a class="link" href="https://www.facebook.com/"
-         target="_blank">👤 Facebook</a>
-    </section>
+      <a href="tel:0308-5000355"
+         aria-label="Call">☎</a>
 
-    <footer class="footer">
-      © 2026 Shehryar Khan | Shehrology
-      <br><br>
-      Made with care.
-    </footer>
+    </div>
+
+  </header>
+
+  <!-- Documents and Links -->
+
+  <main class="links">
+
+    <a class="link"
+       href="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/view?usp=drive_link"
+       target="_blank">
+      <span class="link-icon">📁</span>
+      Google Drive
+    </a>
+
+    <a class="link"
+       href="https://drive.google.com/file/d/19kEy357zMCG-SEWmpBjn-_P0HYXMRCCV/view?usp=drive_link"
+       target="_blank">
+      <span class="link-icon">📄</span>
+      Personal Documents (PDF)
+    </a>
+
+    <a class="link"
+       href="YOUR_CV_LINK"
+       target="_blank">
+      <span class="link-icon">💼</span>
+      My Resume / CV
+    </a>
+
+    <a class="link"
+       href="https://www.linkedin.com/in/shehrology/"
+       target="_blank">
+      <span class="link-icon">🔗</span>
+      Professional Profile
+    </a>
+
+    <a class="link"
+       href="https://github.com/Shehrology"
+       target="_blank">
+      <span class="link-icon">💻</span>
+      My Projects
+    </a>
+
+    <a class="link"
+       href="YOUR_HUND_LINK"
+       target="_blank">
+      <span class="link-icon">🏡</span>
+      Hund, Swabi
+    </a>
+
+    <a class="link"
+       href="mailto:Shehrology@gmail.com">
+      <span class="link-icon">✉️</span>
+      Contact Me
+    </a>
 
   </main>
+
+  <footer class="footer">
+    © 2026 Shehryar Khan
+    <br><br>
+    All Rights Reserved.
+  </footer>
+
+</div>
+
+<script>
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Shehryar Khan',
+      text: 'Visit my personal profile',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => alert('Link copied!'))
+      .catch(() => alert('Please copy the website link manually.'));
+  }
+}
+</script>
+
 </body>
 </html>
